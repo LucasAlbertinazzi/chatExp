@@ -51,6 +51,6 @@ io.on("connection", client => {
     });
 });
 
-http.listen(80, function(){
-    console.log("Servidor ativo na porta 80");
+http.listen(60, function(){
+    console.log("Servidor ativo na porta 60");
 });

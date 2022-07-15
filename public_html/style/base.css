@@ -226,7 +226,7 @@ div#box div#chat div#usuario{
 }
 
 div#box div#chat div#usuario div#lineTop{
-    height: 26px;
+    height: 100%;
     width: 100%;
     display: block;
 }
@@ -265,13 +265,6 @@ div#box div#chat div#usuario div#lineTop div.icone#first{
 div#box div#chat div#usuario div#lineTop div.icone span{
     margin-left: 2px;
     font-weight: bold;
-}
-
-div#box div#chat div#usuario div#lineBottom{
-    height: 26px;
-    width: 100%;
-    display: block;
-    float: left;
 }
 
 div#box div#chat div#usuario div#lineBottom h2{

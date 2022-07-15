@@ -58,13 +58,17 @@ $(function(){
 
     var addMensagem = function(me, msg, from = -1){
         var nome = me == true ? "Você" : contatosAtivos[from];
+        var dataAtual = new Date();
+        var horas = dataAtual.getHours();
+        var minutos = dataAtual.getMinutes();
+
         var elm = me == true ? `<li class="me">` : `<li>`;
-            elm += `<div id="header"><img src="imagem/pessoa.png" /><div id="info"><span class="nome">${nome}</span><span class="data">Hoje às 13:41</span></div></div><div id="mensagem"><p>${msg}</p></div></li>`;
+            elm += `<div id="header"><img src="imagem/pessoa.png" /><div id="info"><span class="nome">${nome}</span><span class="data">${+ horas + ":" + minutos} </span></div></div><div id="mensagem"><p>${msg}</p></div></li>`;
 
         $("ul#conversa").append(elm);
     };
 
-    var socket = io.connect("http://localhost/");
+    var socket = io.connect("http://localhost:60");
 
     socket.emit("message", JSON.stringify({type: "c", data: nome}));
     socket.on("message", mensagem => {
